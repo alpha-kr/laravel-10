@@ -25,6 +25,7 @@ class UpdateTodoRequest extends FormRequest
             'id' => 'exists:todos,id',
             'title' => 'string|max:255',
             'completed' => 'boolean',
+            'categories.*' => ['exists:categories,id'],
             'endDate' => 'date|after:now'
         ];
     }

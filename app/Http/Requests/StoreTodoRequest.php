@@ -23,6 +23,8 @@ class StoreTodoRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
+            'categories' => 'array',
+            'categories.*' => ['exists:categories,id'],
             'endDate' => 'date|after:now'
         ];
     }

@@ -11,7 +11,8 @@ class TodoData extends Data
         public ?string  $id,
         public string | Optional $title,
         public string | Optional $end_date,
-        public bool   | Optional $completed = false
+        public bool   | Optional $completed = false,
+        public array  | Optional $categories,
         //
     ) {
     }

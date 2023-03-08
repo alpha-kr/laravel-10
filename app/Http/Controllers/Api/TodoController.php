@@ -32,6 +32,7 @@ class TodoController extends Controller
             SaveTodo::run(
                 dto: TodoData::from($request->safe([
                     'title',
+                    'categories'
                 ]))
             )
         );
@@ -56,7 +57,8 @@ class TodoController extends Controller
                     'id' => $todo->id,
                     ...$request->safe([
                         'title',
-                        'completed'
+                        'completed',
+                        'categories'
                     ])
                 ])
             )

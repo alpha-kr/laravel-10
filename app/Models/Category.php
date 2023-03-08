@@ -6,14 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Todo extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
-    public function categories():BelongsToMany
+    public function todos(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class,'category_todos');
+        return $this->belongsToMany(Todo::class,'category_todos');
     }
 }
